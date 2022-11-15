@@ -25,6 +25,11 @@ class UsersController < ApplicationController
     render json: ing, status: :ok
   end
 
+  def favorites
+    favorite = Recipe.where("user_id = ?", params[:id])
+    render json: favorite, status: :ok
+  end
+
   private
   
   def user_params
