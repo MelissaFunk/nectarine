@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-function RecipeCard({ recipe, handleDeleteRecipe }) {
+function CalendarCard({ recipe, handleDeleteRecipe }) {
   const [week, setWeek] = useState("")
   const [day, setDay] = useState("")
 
@@ -12,7 +12,7 @@ function RecipeCard({ recipe, handleDeleteRecipe }) {
     setDay(e.target.value)
   }
 
-  const handleAddDate = (e) => {
+  const handleChangeDate = (e) => {
     e.preventDefault()
     fetch(`/recipes/${recipe.id}`, {
       method: 'PATCH',
@@ -32,11 +32,10 @@ function RecipeCard({ recipe, handleDeleteRecipe }) {
   }
 
   return(
-    <div className="recipe-card">
+    <div className="calendar-card">
       <a href={recipe.link} target="_blank" rel="noreferrer"><h3>{recipe.title}</h3></a>
       <img src={recipe.image} alt={recipe.title}/>
-
-      <form onSubmit={e => handleAddDate(e)}>
+      <form onSubmit={e => handleChangeDate(e)}>
         <select onChange={e => weekSelect(e)}>
           <option>Week:</option>
           <option value="1">This Week</option>
@@ -52,12 +51,11 @@ function RecipeCard({ recipe, handleDeleteRecipe }) {
           <option value="Fri">Friday</option>
           <option value="Sat">Saturday</option>
         </select>
-        <button>Add to Calendar</button>
+        <button>Change Date</button>
       </form>
-
       <button onClick={handleDeleteClick}>Delete</button>
     </div>
   )
 }
 
-export default RecipeCard
+export default CalendarCard

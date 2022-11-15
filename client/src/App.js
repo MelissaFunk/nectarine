@@ -5,6 +5,7 @@ import NavBar from './NavBar'
 import Login from './Login'
 import AddRecipe from './AddRecipe'
 import MyRecipes from './MyRecipes'
+import Groceries from './Groceries'
 
 function App() {
   const [currentUser, setCurrentUser] = useState({})
@@ -25,6 +26,7 @@ function App() {
         <Route exact path="/"><Login setCurrentUser={setCurrentUser}/></Route>
         <Route exact path="/add-recipe"><AddRecipe currentUser={currentUser}/></Route>
         <Route exact path="/my-recipes"><MyRecipes currentUser={currentUser}/></Route>
+        <Route exact path="/my-groceries"><Groceries currentUser={currentUser}/></Route>
       </Switch>
     </div>
   );
