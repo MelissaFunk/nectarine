@@ -20,14 +20,19 @@ class UsersController < ApplicationController
     end
   end
 
+  def favorites
+    favorite = Recipe.where("user_id = ?", params[:id])
+    render json: favorite, status: :ok
+  end
+
   def groceries
     groc = Recipe.where(["user_id = ?", params[:id]]).map(&:ingredients).join(", ").split(", ")
     render json: groc, status: :ok
   end
 
-  def favorites
-    favorite = Recipe.where("user_id = ?", params[:id])
-    render json: favorite, status: :ok
+  def boughts
+    boughts = Bought.where(["user_id = ?", params[:id]]).map(&:items).join(", ").split(", ")
+    render json: boughts, status: :ok
   end
 
   private

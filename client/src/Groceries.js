@@ -15,7 +15,9 @@ function Groceries({ currentUser }) {
     <div>
       <h1>Groceries</h1>
       {groceries.map(item =>
-        <p key={item}>{item}</p>
+        <div key={item}>
+        <span>{item}</span>
+        </div>
       )}
     </div>
   )
