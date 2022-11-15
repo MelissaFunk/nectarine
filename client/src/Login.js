@@ -50,25 +50,25 @@ function Login({ setCurrentUser }) {
       } 
     })
   }
-
+ 
   return (
-    <div>
+    <div className="login-div">
       <h1>Recipe Handler</h1>
       <form onSubmit={onLoginSubmit}>
-        <input placeholder=" Username" type="text" value={userLog} onChange={e => setUserLog(e.target.value)} />
-        <input placeholder=" Password" type="password" value={passLog} onChange={e => setPassLog(e.target.value)} />
+        <input placeholder="Username" type="text" value={userLog} onChange={e => setUserLog(e.target.value)} />
+        <input placeholder="Password" type="password" value={passLog} onChange={e => setPassLog(e.target.value)} />
         <button type="submit">Login</button>
       </form>
 
       <form onSubmit={onSignupSubmit}>
-        <input placeholder=" Username" type="text" value={userSign} onChange={e => setUserSign(e.target.value)} />
-        <input placeholder=" Password" type="password" value={passSign} onChange={e => setPassSign(e.target.value)} />
+        <input placeholder="Username" type="text" value={userSign} onChange={e => setUserSign(e.target.value)} />
+        <input placeholder="Password" type="password" value={passSign} onChange={e => setPassSign(e.target.value)} />
         <button type="submit">Sign Up</button>
       </form>
 
       <div>
         {errors ? errors.map(error => (
-          <p key={error}>{error}</p>
+          <p key={error} className="errors">{error}</p>
         )) : null}
       </div>
 

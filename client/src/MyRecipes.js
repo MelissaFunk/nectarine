@@ -94,15 +94,17 @@ function MyRecipes({ currentUser }) {
     )}
 
   return(
-    <div>
-      <h1>My Recipes</h1>
-      <button onClick={() => setAddRecipePopup(true)}>Add Recipe</button>
-      <AddRecipe trigger={addRecipePopup} setTrigger={setAddRecipePopup} currentUser={currentUser}/>
+    <div className="myrecipes-div">
+      <div className="myrecipe-header">
+        <button onClick={() => setAddRecipePopup(true)}>Add Recipe</button>
+        <AddRecipe trigger={addRecipePopup} setTrigger={setAddRecipePopup} currentUser={currentUser}/>
+      </div>
       
+      <div className="recipe-container">
         {eachRecipe()}
+      </div>
 
       <div className="calendar-div">
-      <h1>Calendar</h1>
       <h2>Week of {currentweek}</h2>
       <table>
         <tbody>
@@ -126,7 +128,7 @@ function MyRecipes({ currentUser }) {
         </tr>
         </tbody>
       </table>
-
+ 
       <h2>Week of {nextweek}</h2>
       <table>
         <tbody>

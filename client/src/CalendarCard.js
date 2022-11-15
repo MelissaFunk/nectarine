@@ -33,10 +33,10 @@ function CalendarCard({ recipe, handleDeleteRecipe }) {
 
   return(
     <div className="calendar-card">
-      <a href={recipe.link} target="_blank" rel="noreferrer"><h3>{recipe.title}</h3></a>
+      <a href={recipe.link} target="_blank" rel="noreferrer"><h4>{recipe.title}</h4></a>
       <img src={recipe.image} alt={recipe.title}/>
       <form onSubmit={e => handleChangeDate(e)}>
-        <select onChange={e => weekSelect(e)}>
+        <select className="select-left" onChange={e => weekSelect(e)}>
           <option>Week:</option>
           <option value="1">This Week</option>
           <option value="2">Next Week</option>

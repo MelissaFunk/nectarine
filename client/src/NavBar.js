@@ -17,9 +17,10 @@ function NavBar({ setCurrentUser }) {
   }  
 
   return(
-    <div>
-      <Link to="/my-recipes">My Recipes</Link>
-      <Link to="/my-groceries">Groceries</Link>
+    <div className="navbar">
+      <img src="https://i.imgur.com/IUpishQ.png" />
+      <Link to="/my-recipes"><h3>RECIPES</h3></Link>
+      <Link to="/my-groceries"><h3>GROCERIES</h3></Link>
       <button onClick={() => handleLogout()}>Logout</button>
     </div>
   )

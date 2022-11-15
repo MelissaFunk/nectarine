@@ -23,13 +23,12 @@ function AddRecipe({ trigger, setTrigger, currentUser }) {
     <div className="popup">
       <div className="popup-inner">
       <button className="close-btn" onClick={() => setTrigger(false)}>X</button>
-        <h1>Add Recipe</h1>
         <form onSubmit={handleAddREcipe}>
         <input type="text" name="title" placeholder="Title"/>
         <input type="text" name="image" placeholder="Image URL"/>
         <input type="text" name="link" placeholder="Link"/>
         <input type="text" name="ingredients" placeholder="Ingredients"/>
-        <button>Add Recipe</button>
+        <button className="addrecipe-btn">Add Recipe</button>
         </form>
       </div>
     </div>

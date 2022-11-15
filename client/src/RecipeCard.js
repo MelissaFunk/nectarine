@@ -37,7 +37,7 @@ function RecipeCard({ recipe, handleDeleteRecipe }) {
       <img src={recipe.image} alt={recipe.title}/>
 
       <form onSubmit={e => handleAddDate(e)}>
-        <select onChange={e => weekSelect(e)}>
+        <select className="select-left" onChange={e => weekSelect(e)}>
           <option>Week:</option>
           <option value="1">This Week</option>
           <option value="2">Next Week</option>
