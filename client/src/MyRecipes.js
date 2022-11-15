@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react'
 import RecipeCard from './RecipeCard'
 import CalendarCard from './CalendarCard'
+import AddRecipe from './AddRecipe'
 
 function MyRecipes({ currentUser }) {
   const [myRecipes, setMyRecipes] = useState([])
-  const [filter, setFilter] = useState("All")
   const [sun1, setSun1] = useState([])
   const [mon1, setMon1] = useState([])
   const [tues1, setTues1] = useState([])
@@ -19,6 +19,7 @@ function MyRecipes({ currentUser }) {
   const [thurs2, setThurs2] = useState([])
   const [fri2, setFri2] = useState([])
   const [sat2, setSat2] = useState([])
+  const [addRecipePopup, setAddRecipePopup] = useState(false)
 
   useEffect(() => {
     if (!!currentUser.id) {
@@ -79,26 +80,12 @@ function MyRecipes({ currentUser }) {
   const next = curr.getDate() - curr.getDay() + 7
   const nextweek = new Date(curr.setDate(next)).toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"long", day:"numeric"})
 
-  const handleFilterChange = (e) => {
-    setFilter(e.target.value)
-  }
-
-  const recipeFilter = () => {
-    return myRecipes.filter(recipe => {
-      if (filter === "All") {
-        return true
-      } else {
-        return recipe.category.includes(filter)
-      }
-    })
-  }
-
   const handleDeleteRecipe = (recipeToDelete) => {
     setMyRecipes(myRecipes.filter(recipe => recipe.id !== recipeToDelete.id))
   }
 
   const eachRecipe = () => {
-    return recipeFilter().filter(rec => rec.date === null).map(recipe =>
+    return myRecipes.filter(rec => rec.date === null).map(recipe =>
       <RecipeCard
         recipe={recipe}
         key={recipe.id}
@@ -108,22 +95,11 @@ function MyRecipes({ currentUser }) {
 
   return(
     <div>
-      <div>
       <h1>My Recipes</h1>
-      <label>Search by Category: </label>
-      <select onChange={handleFilterChange}>
-        <option value="All">All</option>
-        <option value="Dinner">Dinner</option>
-        <option value="Lunch">Lunch</option>
-        <option value="Breakfast">Breakfast</option>
-        <option value="Dessert">Dessert</option>
-        <option value="Asian">Asian</option>
-        <option value="Italian">Italian</option>
-        <option value="Mexican">Mexican</option>
-        <option value="American">American</option>
-      </select>
-      {eachRecipe()}
-      </div>
+      <button onClick={() => setAddRecipePopup(true)}>Add Recipe</button>
+      <AddRecipe trigger={addRecipePopup} setTrigger={setAddRecipePopup} currentUser={currentUser}/>
+      
+        {eachRecipe()}
 
       <div className="calendar-div">
       <h1>Calendar</h1>

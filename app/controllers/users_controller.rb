@@ -30,11 +30,6 @@ class UsersController < ApplicationController
     render json: groc, status: :ok
   end
 
-  def boughts
-    boughts = Bought.where(["user_id = ?", params[:id]]).map(&:items).join(", ").split(", ")
-    render json: boughts, status: :ok
-  end
-
   private
   
   def user_params

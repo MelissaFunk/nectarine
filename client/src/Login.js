@@ -51,9 +51,9 @@ function Login({ setCurrentUser }) {
     })
   }
 
-
   return (
     <div>
+      <h1>Recipe Handler</h1>
       <form onSubmit={onLoginSubmit}>
         <input placeholder=" Username" type="text" value={userLog} onChange={e => setUserLog(e.target.value)} />
         <input placeholder=" Password" type="password" value={passLog} onChange={e => setPassLog(e.target.value)} />

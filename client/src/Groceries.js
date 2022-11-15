@@ -7,7 +7,9 @@ function Groceries({ currentUser }) {
     if (!!currentUser.id) {
     fetch(`/groceries/${currentUser.id}`)
       .then(res => res.json())
-      .then(setGroceries)
+      .then(data => setGroceries(data.filter((element, index) => {
+        return data.indexOf(element) === index
+      })))
     }
   }, [currentUser])
 
@@ -15,10 +17,12 @@ function Groceries({ currentUser }) {
     <div>
       <h1>Groceries</h1>
       {groceries.map(item =>
-        <div key={item}>
-        <span>{item}</span>
-        </div>
+        <li key={item}>{item}</li>
       )}
+      <a href="https://www.instacart.com/store" 
+      target="_blank" 
+      rel="noreferrer">
+      Instacart</a>
     </div>
   )
 }

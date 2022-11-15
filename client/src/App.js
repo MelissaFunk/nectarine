@@ -3,7 +3,6 @@ import { Route, Switch } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import NavBar from './NavBar'
 import Login from './Login'
-import AddRecipe from './AddRecipe'
 import MyRecipes from './MyRecipes'
 import Groceries from './Groceries'
 
@@ -21,10 +20,9 @@ function App() {
 
   return (
     <div>
-      {currentUser.username ? <NavBar /> : null}
+      {currentUser.username ? <NavBar setCurrentUser={setCurrentUser}/> : null}
       <Switch>
         <Route exact path="/"><Login setCurrentUser={setCurrentUser}/></Route>
-        <Route exact path="/add-recipe"><AddRecipe currentUser={currentUser}/></Route>
         <Route exact path="/my-recipes"><MyRecipes currentUser={currentUser}/></Route>
         <Route exact path="/my-groceries"><Groceries currentUser={currentUser}/></Route>
       </Switch>
