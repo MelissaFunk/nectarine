@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import RecipeCard from './RecipeCard'
 import CalendarCard from './CalendarCard'
 import AddRecipe from './AddRecipe'
 
@@ -84,24 +83,11 @@ function MyRecipes({ currentUser }) {
     setMyRecipes(myRecipes.filter(recipe => recipe.id !== recipeToDelete.id))
   }
 
-  const eachRecipe = () => {
-    return myRecipes.filter(rec => rec.date === null).map(recipe =>
-      <RecipeCard
-        recipe={recipe}
-        key={recipe.id}
-        handleDeleteRecipe={handleDeleteRecipe}
-      />
-    )}
-
   return(
     <div className="myrecipes-div">
       <div className="myrecipe-header">
         <button onClick={() => setAddRecipePopup(true)}>Add Recipe</button>
         <AddRecipe trigger={addRecipePopup} setTrigger={setAddRecipePopup} currentUser={currentUser}/>
-      </div>
-      
-      <div className="recipe-container">
-        {eachRecipe()}
       </div>
 
       <div className="calendar-div">
