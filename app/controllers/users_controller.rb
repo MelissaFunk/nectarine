@@ -26,7 +26,7 @@ class UsersController < ApplicationController
   end
 
   def groceries
-    groc = Recipe.where(["user_id = ?", params[:id]]).map(&:ingredients).join(", ").split(", ")
+    groc = Recipe.where(["user_id = ?", params[:id]]).map(&:ingredients).join(", ").split(", ").reject(&:empty?)
     render json: groc, status: :ok
   end
 
