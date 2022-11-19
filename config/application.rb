@@ -18,7 +18,7 @@ require "action_cable/engine"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module MyRecipes
+module Nectarine
   class Application < Rails::Application
     config.load_defaults 6.1
     # This is set in apps generated with the --api flag, and removes session/cookie middleware

@@ -1,3 +1,3 @@
-mel = User.create(username: "melissafunk", password: "hello")
+mel = User.create(username: "melissafunk", password: "hello", image: "https://avatars.githubusercontent.com/u/87447218?v=4")
 
-r1 = Recipe.create(user_id: 1, title: "Spam Musubi", image: "https://drivemehungry.com/wp-content/uploads/2022/07/spam-musubi-7.jpg", link: "https://drivemehungry.com/spam-musubi/#recipe", category: "Asian", ingredients: "Spam, Nori, Rice, Furikake, Soy Sauce, Sugar, Mirin")
+r1 = Recipe.create(user_id: 1, name: "Test", image: "www.image.com", link: "www.link.com", cuisine: "Vegan", ingredients: "carrot, apple, lemon", date: "Mon2", is_favorite: true, has_made: false)

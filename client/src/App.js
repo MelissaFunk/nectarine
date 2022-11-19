@@ -1,31 +1,23 @@
+import logo from './logo.svg';
 import './App.css';
-import { Route, Switch } from 'react-router-dom'
-import { useState, useEffect } from 'react'
-import NavBar from './NavBar'
-import Login from './Login'
-import MyRecipes from './MyRecipes'
-import Groceries from './Groceries'
 
 function App() {
-  const [currentUser, setCurrentUser] = useState({})
-
-  useEffect(() => {
-    fetch('/me')
-    .then(res => {
-      if(res.ok) {
-        res.json().then(user => setCurrentUser(user))
-      }
-    })
-  }, [])
-
   return (
-    <div>
-      {currentUser.username ? <NavBar setCurrentUser={setCurrentUser}/> : null}
-      <Switch>
-        <Route exact path="/"><Login setCurrentUser={setCurrentUser}/></Route>
-        <Route exact path="/my-recipes"><MyRecipes currentUser={currentUser}/></Route>
-        <Route exact path="/my-groceries"><Groceries currentUser={currentUser}/></Route>
-      </Switch>
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
     </div>
   );
 }

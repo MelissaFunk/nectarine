@@ -33,7 +33,7 @@ class UsersController < ApplicationController
   private
   
   def user_params
-    params.permit(:username, :password)
+    params.permit(:username, :password, :image)
   end
 
   def render_unprocessable_response(invalid)
