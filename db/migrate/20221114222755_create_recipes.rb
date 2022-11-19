@@ -7,10 +7,9 @@ class CreateRecipes < ActiveRecord::Migration[7.0]
       t.string :cuisine
       t.string :ingredients
       t.string :date
+      t.string :cook_time
       t.boolean :is_favorite
-      t.boolean :has_tried
       t.boolean :has_made
-      t.string :status
       t.belongs_to :user, null: false, foreign_key: true
 
       t.timestamps

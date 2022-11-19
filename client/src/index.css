@@ -11,3 +11,61 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* NAVBAR */
+
+.navbar {
+  position: relative;
+  top: 0px;
+  left: -2px;
+  right: -4px;
+  width: 100%;
+  height: 10px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(190, 190, 190, 0.6);
+  background-color: rgb(236, 236, 237)
+}
+
+.navbar img{
+  height: 70px;
+  position: absolute;
+  left: 30px;
+  top: 0px
+}
+
+.navbar h1 {
+  position: absolute;
+  left: 110px;
+  top: -5px;
+}
+
+.link1 {
+  display: inline-block;
+  position: relative;
+  top: -25px;
+  left: -50px
+}
+
+.link2 {
+  display: inline-block;
+  position: relative;
+  top: -25px;
+  left: 50px
+}
+
+.link3 {
+  display: inline-block;
+  position: relative;
+  top: -25px;
+  left: 150px
+}
+
+.signup-login-div {
+  position: absolute;
+  right: 30px;
+  top: 27px
+}
