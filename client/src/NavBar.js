@@ -25,10 +25,10 @@ function NavBar({ currentUser, setCurrentUser }) {
       <Link to="/planner"><h3 className="link2">Planner</h3></Link>
       <Link to="/groceries"><h3 className="link3">Groceries</h3></Link>
 
-      {currentUser.username ? <button onClick={() => handleLogout()}>Logout</button> :
+      {currentUser.username ? <button className="signup-login-div" onClick={() => handleLogout()}>Logout</button> :
       <div className="signup-login-div">
-        <Link to="/signup"><button>Sign Up</button></Link>
         <Link to="/login"><button>Login</button></Link>
+        <Link to="/signup"><button>Sign Up</button></Link>
       </div>}
     </div>
   )

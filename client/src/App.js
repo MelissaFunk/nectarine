@@ -6,6 +6,7 @@ import Home from './Home'
 import SignUp from './SignUp'
 import Login from './Login'
 import MyRecipes from './MyRecipes'
+import AddRecipe from './AddRecipe'
 import Planner from './Planner'
 import Groceries from './Groceries'
 
@@ -26,9 +27,10 @@ function App() {
       <NavBar currentUser={currentUser} setCurrentUser={setCurrentUser}/>
       <Switch>
         <Route exact path="/"><Home /></Route>
-        <Route exact path="/signup"><SignUp /></Route>
-        <Route exact path="/login"><Login /></Route>
-        <Route exact path="/my-recipes"><MyRecipes /></Route>
+        <Route exact path="/login"><Login setCurrentUser={setCurrentUser}/></Route>
+        <Route exact path="/signup"><SignUp setCurrentUser={setCurrentUser}/></Route>
+        <Route exact path="/my-recipes"><MyRecipes currentUser={currentUser}/></Route>
+        <Route exact path="/add-recipe"><AddRecipe currentUser={currentUser}/></Route>
         <Route exact path="/planner"><Planner /></Route>
         <Route exact path="/groceries"><Groceries /></Route>
       </Switch>
