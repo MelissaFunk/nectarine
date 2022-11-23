@@ -1,4 +1,4 @@
-function Groceries() {
+function Groceries({ currentUser }) {
   return(
     <div>
       <h1>Groceries</h1>

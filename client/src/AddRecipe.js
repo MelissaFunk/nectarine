@@ -46,8 +46,6 @@ function AddRecipe({ trigger, setTrigger, currentUser }) {
             <option></option>
             <option value="1">Week 1</option>
             <option value="2">Week 2</option>
-            <option value="3">Week 3</option>
-            <option value="4">Week 4</option>
           </select>
           <label>Day: </label>
           <select onChange={e => setDay(e.target.value)}>
