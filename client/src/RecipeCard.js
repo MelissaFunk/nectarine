@@ -1,8 +1,8 @@
 function RecipeCard({ recipe }) {
   return(
-    <div>
+    <div className="recipe-card-div">
       <a href={recipe.link} target="_blank" rel="noreferrer">
-        <h2>{recipe.name}</h2></a>
+        <h3>{recipe.name}</h3></a>
       <p>{recipe.cuisine} | {recipe.cook_time}</p> 
       <img src={recipe.image} alt={recipe.name}/>
     </div>

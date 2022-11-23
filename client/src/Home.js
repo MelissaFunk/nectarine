@@ -16,14 +16,14 @@ function Home() {
     })
   }, [])
 
-  const recipesToDisplay = random5.slice(0, 5).map(recipe =>
+  const recipesToDisplay = random5.slice(0, 6).map(recipe =>
     <RecipeCard key={recipe.id} recipe={recipe}/>
   )
 
   return(
-    <div>
+    <div className="home-div">
       <h1>Check Out These Recipes:</h1>
-      {recipesToDisplay}
+      <div className="recipe-cards">{recipesToDisplay}</div>
     </div>
   )
 }

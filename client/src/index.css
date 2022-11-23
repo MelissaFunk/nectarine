@@ -10,6 +10,8 @@ code {
     monospace;
 }
 
+a:link { text-decoration: none; }
+
 /* NAVBAR */
 
 .navbar {
@@ -92,6 +94,48 @@ code {
   color: white;
   border: none;
   border-radius: 4px
+}
+
+/* HOME */
+
+.home-div {
+  text-align: center;
+}
+
+.home-div h1{
+  color: rgb(78, 80, 99)
+}
+
+.recipe-cards {
+  margin: auto;
+  width: 95%;
+  margin-right: 0px
+}
+
+.recipe-card-div {
+  display: inline-block;
+  background-color:#EE573D;
+  height: 280px;
+  width: 280px;
+  margin-right: 50px;
+  margin-bottom: 100px;
+  border-radius: 4px
+}
+
+.recipe-card-div img {
+  height: 250px;
+  width: 280px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px
+}
+
+.recipe-card-div h3 {
+  color: white;
+  margin-bottom: -10px;
+}
+
+.recipe-card-div h3:hover {
+  color: rgb(78, 80, 99);
 }
 
 /* ADD RECIPE */
