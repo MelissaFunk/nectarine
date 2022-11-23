@@ -81,8 +81,8 @@ function MyRecipes({ currentUser }) {
         <label>Search By Cuisine: </label>
         <input type="text" onChange={e => setCuisineFilter(e.target.value)}></input>
         <button onClick={() => showAll()}>All</button>
-        <button onClick={() => showMade()}>Made</button>
-        <button onClick={() => showFavorite()}>Favorites</button>
+        <button onClick={() => showMade()}>Made ✅</button>
+        <button onClick={() => showFavorite()}>Favorites ⭐</button>
         {recipesToDisplay} 
       </div>
       : 

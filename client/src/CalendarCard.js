@@ -26,8 +26,7 @@ function CalendarCard({ recipe, handleDeleteRecipe }) {
 
   return(
     <div className="recipe-card">
-      <a href={recipe.link} target="_blank" rel="noreferrer">
-        <h2>{recipe.name}</h2></a>
+      <h2><a href={recipe.link} target="_blank" rel="noreferrer">{recipe.name}</a> {recipe.has_made === true ? "✅" : null} {recipe.is_favorite === true ? "⭐" : null}</h2>
       <img src={recipe.image} alt={recipe.name}/>
         <label>Week: </label>
         <select onChange={e => setWeek(e.target.value)}>

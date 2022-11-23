@@ -34,8 +34,7 @@ function MyRecipeCard({ recipe, handleDeleteRecipe }) {
 
   return(
     <div className="recipe-card">
-      <a href={recipe.link} target="_blank" rel="noreferrer">
-        <h2>{recipe.name}</h2></a>
+      <h2><a href={recipe.link} target="_blank" rel="noreferrer">{recipe.name}</a> {recipe.has_made === true ? "✅" : null} {recipe.is_favorite === true ? "⭐" : null}</h2>
       <p>{recipe.cuisine} | {recipe.cook_time}</p> 
       <img src={recipe.image} alt={recipe.name}/>
       <button onClick={() => onDeleteRecipe()}>Delete</button>
