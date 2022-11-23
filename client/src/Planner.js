@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import CalendarCard from './CalendarCard'
 
 function Planner({ currentUser }) {
@@ -59,6 +60,8 @@ function Planner({ currentUser }) {
   return(
     <div>
       <h1>Planner</h1>
+      {currentUser.username ?
+      <div>
       <h2>Week of {firstWeek}</h2>
       <table>
         <thead>
@@ -106,6 +109,9 @@ function Planner({ currentUser }) {
             <td>{sat2.map(recipe => <CalendarCard recipe={recipe} key={recipe.id} handleDeleteRecipe={handleDeleteRecipe}/>)}</td>
           </tr>
       </table>
+      </div>
+      :
+      <h2><Link to="/login">Login</Link> to View Planner</h2>}
     </div>
   )
 }

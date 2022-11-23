@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 function Groceries({ currentUser }) {
   const [ingredients, setIngredients] = useState([])
@@ -32,15 +33,17 @@ function Groceries({ currentUser }) {
   return(
     <div>
       <h1>Groceries</h1>
+      {currentUser.username ?
+      <div>
+      <a href="https://www.instacart.com/store" target="_blank" rel="noreferrer">Instacart</a>
       {ingredients1}
-      <br></br>
       {ingredients2}
-      <br></br>
       {ingredients3}
-      <br></br>
       {ingredients4}
-      <br></br>
       {ingredients5}
+      </div>
+      :
+      <h2><Link to="/login">Login</Link> to View Groceries</h2>}
     </div>
   )
 }
