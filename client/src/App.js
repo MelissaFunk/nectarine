@@ -30,7 +30,6 @@ function App() {
         <Route exact path="/login"><Login setCurrentUser={setCurrentUser}/></Route>
         <Route exact path="/signup"><SignUp setCurrentUser={setCurrentUser}/></Route>
         <Route exact path="/my-recipes"><MyRecipes currentUser={currentUser}/></Route>
-        <Route exact path="/add-recipe"><AddRecipe currentUser={currentUser}/></Route>
         <Route exact path="/planner"><Planner /></Route>
         <Route exact path="/groceries"><Groceries /></Route>
       </Switch>

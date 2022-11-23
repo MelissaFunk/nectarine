@@ -25,6 +25,7 @@ function AddRecipe({ trigger, setTrigger, currentUser }) {
     .then(res => res.json())
     .then(recipe => console.log(recipe))
     e.target.reset()
+    setTrigger(false)
   }
 
   return (trigger ? (
@@ -35,6 +36,7 @@ function AddRecipe({ trigger, setTrigger, currentUser }) {
           <input type="text" name="name" placeholder="Name"></input>
           <input type="text" name="image" placeholder="Image URL"></input>
           <input type="text" name="link" placeholder="Link URL"></input>
+          <input type="text" name="cuisine" placeholder="Cuisine"></input>
           <input type="text" name="ingredients" placeholder="Ingredients"></input>
           <input type="text" name="cook_time" placeholder="Cook Time"></input>
 

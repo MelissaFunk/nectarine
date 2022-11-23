@@ -100,3 +100,9 @@ code {
   border-radius: 5px;
   cursor: pointer
 }
+
+/* RECIPECARD */
+
+.recipe-card img {
+  height: 200px
+}
