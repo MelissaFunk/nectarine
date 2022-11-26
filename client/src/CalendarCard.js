@@ -1,32 +1,32 @@
 import { useState } from 'react'
 
-function CalendarCard({ recipe, handleDeleteRecipe }) {
+function CalendarCard({ recipe }) {
   const [week, setWeek] = useState('')
   const [day, setDay] = useState('')
 
-  const onDeleteRecipe = () => {
+  const onRemoveDate = () => {
     fetch(`/recipes/${recipe.id}`, {
-      method: 'DELETE'
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ date: null, has_made: true })
     })
     .then(res => res.json())
-    .then(recipe => handleDeleteRecipe(recipe))
+    .then(recipe => console.log(recipe))
   }
 
   const onChangeDate = () => {
     fetch(`/recipes/${recipe.id}`, {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        date: `${day}${week}`
-      })
+      body: JSON.stringify({ date: `${day}${week}` })
     })
     .then(res => res.json())
     .then(recipe => console.log(recipe))
   }
 
   return(
-    <div className="recipe-card">
-      <h2><a href={recipe.link} target="_blank" rel="noreferrer">{recipe.name}</a> {recipe.has_made === true ? "✅" : null} {recipe.is_favorite === true ? "⭐" : null}</h2>
+    <div className="calendar-card">
+      <h4 className="calendar-card-h3"><a href={recipe.link} target="_blank" rel="noreferrer">{recipe.name}</a></h4>
       <img src={recipe.image} alt={recipe.name}/>
         <label>Week: </label>
         <select onChange={e => setWeek(e.target.value)}>
@@ -34,6 +34,7 @@ function CalendarCard({ recipe, handleDeleteRecipe }) {
           <option value="1">1</option>
           <option value="2">2</option>
         </select>
+        <p></p>
         <label>Day: </label>
         <select onChange={e => setDay(e.target.value)}>
           <option></option>
@@ -45,8 +46,9 @@ function CalendarCard({ recipe, handleDeleteRecipe }) {
           <option value="Fri">Friday</option>
           <option value="Sat">Saturday</option>
         </select>
+        <p></p>
         <button type="submit" onClick={onChangeDate}>Change Date</button>
-      <button onClick={() => onDeleteRecipe()}>Delete</button>
+      <button onClick={() => onRemoveDate()}>Made/Remove</button>
     </div>
   )
 }

@@ -89,7 +89,7 @@ function MyRecipes({ currentUser }) {
         </div>
       </div>
       : 
-      <h2><Link to="/login">Login</Link> to Create Recipes</h2>
+      <h2><Link to="/login" className="login-link">Login</Link> to Create Recipes</h2>
       }
     </div>
   )

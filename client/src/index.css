@@ -150,8 +150,7 @@ a:active { text-decoration: none; }
 
 .recipe-cards {
   margin: auto;
-  width: 95%;
-  margin-right: 0px
+  width: 90%;
 }
 
 .recipe-card-div {
@@ -187,6 +186,10 @@ a:active { text-decoration: none; }
   text-align: center;
 }
 
+.login-link, .login-link:hover {
+  color:#EE573D
+}
+
 .my-recipes-div h1, h2, label {
   color:rgb(78, 80, 99)
 }
@@ -219,9 +222,8 @@ a:active { text-decoration: none; }
 
 .recipe-container {
   margin: auto;
-  width: 95%;
-  margin-right: 0px;
-  margin-top: 40px
+  width: 100%;
+  margin-top: 40px;
 }
 
 /* ADD RECIPE */
@@ -249,8 +251,8 @@ a:active { text-decoration: none; }
 
 .popup-inner .close-btn {
   position: absolute;
-  top: 16px;
-  right: 10px;
+  top: 0px;
+  right: 18px;
   border-radius: 5px;
   cursor: pointer;
   width: 25px;
@@ -282,7 +284,7 @@ a:active { text-decoration: none; }
   border: none;
   border-radius: 4px;
   font-size: 17px;
-  margin-left: 8px
+  margin-top: 20px
 }
 
 /* MYRECIPECARD */
@@ -291,8 +293,9 @@ a:active { text-decoration: none; }
   display: inline-block;
   background-color:#EE573D;
   height: 300px;
-  width: 350px;
-  margin-right: 50px;
+  width: 390px;
+  margin-right: 15px;
+  margin-left: 15px;
   margin-bottom: 120px;
   border-radius: 4px;
 }
@@ -324,17 +327,101 @@ a:active { text-decoration: none; }
   border: none;
   border-radius: 4px;
   font-size: 17px;
-  margin-top: 8px
+  margin-top: 8px;
+  margin-right: 5px;
+  margin-left: 5px
 }
 
 .recipe-card-btn {
   height: 32px;
-  width: 100px;
+  width: 120px;
   background-color:#EE573D;
   color: white;
   border: none;
   border-radius: 4px;
   font-size: 17px;
   margin-top: 8px;
-  margin-right: 10px
+  margin-right: 5px;
+  margin-left: 5px
 }
+
+/* PLANNER */
+
+.planner-div {
+  text-align: center;
+}
+
+.planner-div h1, h2 {
+  color: rgb(78, 80, 99);
+}
+
+.planner-div table {
+  border-style: solid;
+  border-color:#EE573D;
+  border-width: 2px;
+  margin: auto;
+  width: 90%;
+  border-collapse: collapse;
+}
+
+.planner-div th {
+  border-bottom: 1px solid #EE573D;
+  height: 50px
+}
+
+.planner-div table th {
+  color:#EE573D
+}
+
+.bottom-div {
+  margin-top: 20px
+}
+
+.calendar-card {
+  display: block;
+  background-color:#EE573D;
+  height: 340px;
+  width: 160px;
+  border-radius: 4px;
+  margin: auto;
+  margin-bottom: 10px
+}
+
+.calendar-card-h3 {
+  padding-top: 20px
+}
+
+.calendar-card img {
+  width: 100%;
+  height: 120px;
+  margin-bottom: 10px
+}
+
+.calendar-card label {
+  color: white
+}
+
+.calendar-card select {
+  margin-right: 10px;
+}
+
+.calendar-card p {
+  font-size: xx-small
+}
+
+.calendar-card button {
+  border: none;
+  background-color: white;
+  height: 24px;
+  width: 100px;
+  border-radius: 4px;
+  margin-bottom: 8px
+}
+
+.calendar-card button:hover{
+  background-color:rgb(78, 80, 99);
+  cursor: pointer;
+  color: white
+}
+
+

@@ -53,12 +53,8 @@ function Planner({ currentUser }) {
       })
   }, [recipes, currentUser.id])
 
-  const handleDeleteRecipe = (recipeToDelete) => {
-    setRecipes(recipes.filter(recipe => recipe.id !== recipeToDelete.id))
-  }
-
   return(
-    <div>
+    <div className="planner-div">
       <h1>Planner</h1>
       {currentUser.username ?
       <div>
@@ -77,19 +73,20 @@ function Planner({ currentUser }) {
         </thead>
         <tbody>
           <tr>
-            <td>{sun1.map(recipe => <CalendarCard recipe={recipe} key={recipe.id} handleDeleteRecipe={handleDeleteRecipe}/>)}</td>
-            <td>{mon1.map(recipe => <CalendarCard recipe={recipe} key={recipe.id} handleDeleteRecipe={handleDeleteRecipe}/>)}</td>
-            <td>{tues1.map(recipe => <CalendarCard recipe={recipe} key={recipe.id} handleDeleteRecipe={handleDeleteRecipe}/>)}</td>
-            <td>{wed1.map(recipe => <CalendarCard recipe={recipe} key={recipe.id} handleDeleteRecipe={handleDeleteRecipe}/>)}</td>
-            <td>{thurs1.map(recipe => <CalendarCard recipe={recipe} key={recipe.id} handleDeleteRecipe={handleDeleteRecipe}/>)}</td>
-            <td>{fri1.map(recipe => <CalendarCard recipe={recipe} key={recipe.id} handleDeleteRecipe={handleDeleteRecipe}/>)}</td>
-            <td>{sat1.map(recipe => <CalendarCard recipe={recipe} key={recipe.id} handleDeleteRecipe={handleDeleteRecipe}/>)}</td>
+            <td>{sun1.map(recipe => <CalendarCard recipe={recipe} key={recipe.id}/>)}</td>
+            <td>{mon1.map(recipe => <CalendarCard recipe={recipe} key={recipe.id}/>)}</td>
+            <td>{tues1.map(recipe => <CalendarCard recipe={recipe} key={recipe.id}/>)}</td>
+            <td>{wed1.map(recipe => <CalendarCard recipe={recipe} key={recipe.id}/>)}</td>
+            <td>{thurs1.map(recipe => <CalendarCard recipe={recipe} key={recipe.id}/>)}</td>
+            <td>{fri1.map(recipe => <CalendarCard recipe={recipe} key={recipe.id}/>)}</td>
+            <td>{sat1.map(recipe => <CalendarCard recipe={recipe} key={recipe.id}/>)}</td>
           </tr>
         </tbody>
       </table>
 
-      <h2>Week of {nextWeek}</h2>
-      <table>
+    <h2>Week of {nextWeek}</h2>
+    <table>
+      <thead>
         <tr>
           <th>Sunday</th>
           <th>Monday</th>
@@ -99,19 +96,23 @@ function Planner({ currentUser }) {
           <th>Friday</th>
           <th>Saturday</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
-            <td>{sun2.map(recipe => <CalendarCard recipe={recipe} key={recipe.id} handleDeleteRecipe={handleDeleteRecipe}/>)}</td>
-            <td>{mon2.map(recipe => <CalendarCard recipe={recipe} key={recipe.id} handleDeleteRecipe={handleDeleteRecipe}/>)}</td>
-            <td>{tues2.map(recipe => <CalendarCard recipe={recipe} key={recipe.id} handleDeleteRecipe={handleDeleteRecipe}/>)}</td>
-            <td>{wed2.map(recipe => <CalendarCard recipe={recipe} key={recipe.id} handleDeleteRecipe={handleDeleteRecipe}/>)}</td>
-            <td>{thurs2.map(recipe => <CalendarCard recipe={recipe} key={recipe.id} handleDeleteRecipe={handleDeleteRecipe}/>)}</td>
-            <td>{fri2.map(recipe => <CalendarCard recipe={recipe} key={recipe.id} handleDeleteRecipe={handleDeleteRecipe}/>)}</td>
-            <td>{sat2.map(recipe => <CalendarCard recipe={recipe} key={recipe.id} handleDeleteRecipe={handleDeleteRecipe}/>)}</td>
+            <td>{sun2.map(recipe => <CalendarCard recipe={recipe} key={recipe.id}/>)}</td>
+            <td>{mon2.map(recipe => <CalendarCard recipe={recipe} key={recipe.id}/>)}</td>
+            <td>{tues2.map(recipe => <CalendarCard recipe={recipe} key={recipe.id}/>)}</td>
+            <td>{wed2.map(recipe => <CalendarCard recipe={recipe} key={recipe.id}/>)}</td>
+            <td>{thurs2.map(recipe => <CalendarCard recipe={recipe} key={recipe.id}/>)}</td>
+            <td>{fri2.map(recipe => <CalendarCard recipe={recipe} key={recipe.id}/>)}</td>
+            <td>{sat2.map(recipe => <CalendarCard recipe={recipe} key={recipe.id}/>)}</td>
           </tr>
+        </tbody>
       </table>
+      <div className="bottom-div"></div>
       </div>
       :
-      <h2><Link to="/login">Login</Link> to View Planner</h2>}
+      <h2><Link to="/login" className="login-link">Login</Link> to View Planner</h2>}
     </div>
   )
 }

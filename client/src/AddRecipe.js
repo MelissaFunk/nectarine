@@ -1,8 +1,4 @@
-import { useState } from 'react'
-
 function AddRecipe({ trigger, setTrigger, currentUser }) {
-  const [day, setDay] = useState('')
-  const [week, setWeek] = useState('')
 
   const onAddRecipe = (e) => {
     e.preventDefault()
@@ -15,7 +11,7 @@ function AddRecipe({ trigger, setTrigger, currentUser }) {
         link: e.target.link.value,
         cuisine: e.target.cuisine.value,
         ingredients: e.target.ingredients.value,
-        date: `${day}${week}`,
+        date: null,
         cook_time: e.target.cook_time.value,
         is_favorite: false,
         has_made: false,
@@ -39,25 +35,6 @@ function AddRecipe({ trigger, setTrigger, currentUser }) {
           <input type="text" name="cuisine" placeholder="Cuisine"></input>
           <input type="text" name="ingredients" placeholder="Ingredients"></input>
           <input type="text" name="cook_time" placeholder="Cook Time"></input>
-
-          <p>Calendar: </p>
-          <label>Week: </label>
-          <select onChange={e => setWeek(e.target.value)}>
-            <option></option>
-            <option value="1">Week 1</option>
-            <option value="2">Week 2</option>
-          </select>
-          <label>Day: </label>
-          <select onChange={e => setDay(e.target.value)}>
-            <option></option>
-            <option value="Sun">Sunday</option>
-            <option value="Mon">Monday</option>
-            <option value="Tues">Tuesday</option>
-            <option value="Wed">Wednesday</option>
-            <option value="Thurs">Thursday</option>
-            <option value="Fri">Friday</option>
-            <option value="Sat">Saturday</option>
-          </select>
           <button>Add Recipe</button>
         </form>
       </div>
