@@ -72,7 +72,7 @@ function MyRecipes({ currentUser }) {
   )
 
   return(
-    <div>
+    <div className="my-recipes-div">
       <h1>My Recipes</h1>
       {currentUser.username ? 
       <div>
@@ -80,10 +80,12 @@ function MyRecipes({ currentUser }) {
         <AddRecipe trigger={buttonPopUp} setTrigger={setButtonPopUp} currentUser={currentUser}/>
         <label>Search By Cuisine: </label>
         <input type="text" onChange={e => setCuisineFilter(e.target.value)}></input>
-        <button onClick={() => showAll()}>All</button>
+        <button onClick={() => showAll()}>All 🍑</button>
         <button onClick={() => showMade()}>Made ✅</button>
         <button onClick={() => showFavorite()}>Favorites ⭐</button>
-        {recipesToDisplay} 
+        <div className="recipe-container">
+          {recipesToDisplay} 
+        </div>
       </div>
       : 
       <h2><Link to="/login">Login</Link> to Create Recipes</h2>

@@ -11,6 +11,8 @@ code {
 }
 
 a:link { text-decoration: none; }
+a:visited { text-decoration: none; }
+a:active { text-decoration: none; }
 
 /* NAVBAR */
 
@@ -30,7 +32,7 @@ a:link { text-decoration: none; }
   background-color: rgb(236, 236, 237)
 }
 
-.navbar img{
+.navbar img {
   height: 70px;
   position: absolute;
   left: 30px;
@@ -42,7 +44,7 @@ a:link { text-decoration: none; }
 }
 
 .link1:hover, .link2:hover, .link3:hover {
-  color: darkslategray
+  color: rgb(78, 80, 99)
 }
 
 .link1 {
@@ -72,7 +74,7 @@ a:link { text-decoration: none; }
   top: 25px
 }
 
-.signup-login-div button{
+.signup-login-div button {
   height: 30px;
   width: 80px;
   margin-right: 15px;
@@ -81,6 +83,11 @@ a:link { text-decoration: none; }
   color: white;
   border: none;
   border-radius: 4px
+}
+
+.signup-login-div button:hover, .logout-button:hover {
+  background-color: rgb(78, 80, 99);
+  cursor: pointer
 }
 
 .logout-button {
@@ -94,6 +101,41 @@ a:link { text-decoration: none; }
   color: white;
   border: none;
   border-radius: 4px
+}
+
+/* LOGIN */
+
+.login-div {
+  text-align: center;
+}
+
+.login-div h1 {
+  color: rgb(78, 80, 99);
+}
+
+.login-div input {
+  margin-right: 10px;
+  height: 25px;
+  width: 200px;
+  border-color:#EE573D;
+  border-style: solid;
+  border-radius: 4px;
+  padding-left: 5px;
+}
+
+.login-div button {
+  height: 30px;
+  width: 80px;
+  background-color:#EE573D;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 17px;
+}
+
+.login-div button:hover {
+  background-color:rgb(78, 80, 99);
+  cursor: pointer;
 }
 
 /* HOME */
@@ -138,6 +180,50 @@ a:link { text-decoration: none; }
   color: rgb(78, 80, 99);
 }
 
+
+/* MY RECIPES */
+
+.my-recipes-div {
+  text-align: center;
+}
+
+.my-recipes-div h1, h2, label {
+  color:rgb(78, 80, 99)
+}
+
+.my-recipes-div button {
+  height: 32px;
+  width: 110px;
+  background-color:#EE573D;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 17px;
+  margin-right: 8px
+}
+
+.my-recipes-div button:hover {
+  background-color:rgb(78, 80, 99);
+  cursor: pointer
+}
+
+.my-recipes-div label {
+  font-size: 17px;
+}
+
+.my-recipes-div input {
+  margin-right: 10px;
+  height: 24px;
+  padding-left: 4px;
+}
+
+.recipe-container {
+  margin: auto;
+  width: 95%;
+  margin-right: 0px;
+  margin-top: 40px
+}
+
 /* ADD RECIPE */
 .popup {
   position: fixed;
@@ -164,14 +250,75 @@ a:link { text-decoration: none; }
 .popup-inner .close-btn {
   position: absolute;
   top: 16px;
-  right: 16px;
+  right: 10px;
   border-radius: 5px;
-  cursor: pointer
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+  padding: 3px;
 }
 
-/* RECIPECARD */
+.popup-inner form {
+  margin-top: 20px
+}
+
+.popup-inner input {
+  margin-top: 10px;
+}
+
+.popup-inner p {
+  margin-bottom: 5px
+}
+
+.popup-inner label {
+  margin-left: 8px
+}
+
+.popup-inner button {
+  height: 32px;
+  width: 110px;
+  background-color:#EE573D;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 17px;
+  margin-left: 8px
+}
+
+/* MYRECIPECARD */
+
+.recipe-card {
+  display: inline-block;
+  background-color:#EE573D;
+  height: 280px;
+  width: 320px;
+  margin-right: 50px;
+  margin-bottom: 100px;
+  border-radius: 4px
+}
+
+.recipe-card h2, a {
+  color: white;
+}
+
+.recipe-card p {
+  margin-top: -10px
+}
 
 .recipe-card img {
   height: 200px;
-  width: 200px
+  width: 100%;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px
+}
+
+.recipe-card button {
+  height: 32px;
+  width: 80px;
+  background-color:#EE573D;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 17px;
+  margin-top: 8px
 }

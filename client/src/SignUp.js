@@ -29,7 +29,7 @@ function SignUp({ setCurrentUser }) {
   }
 
   return(
-    <div>
+    <div className="login-div">
       <h1>Sign Up</h1>
       <form onSubmit={onSignUpSubmit}>
         <input placeholder="Username" type="text" value={username} onChange={e => setUsername(e.target.value)}></input>
