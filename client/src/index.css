@@ -191,9 +191,9 @@ a:active { text-decoration: none; }
   color:rgb(78, 80, 99)
 }
 
-.my-recipes-div button {
+.my-recipes-btn {
   height: 32px;
-  width: 110px;
+  width: 140px;
   background-color:#EE573D;
   color: white;
   border: none;
@@ -290,15 +290,19 @@ a:active { text-decoration: none; }
 .recipe-card {
   display: inline-block;
   background-color:#EE573D;
-  height: 280px;
-  width: 320px;
+  height: 300px;
+  width: 350px;
   margin-right: 50px;
-  margin-bottom: 100px;
-  border-radius: 4px
+  margin-bottom: 120px;
+  border-radius: 4px;
 }
 
-.recipe-card h2, a {
+.recipe-card h3, a {
   color: white;
+}
+
+.recipe-card h3:hover, a:hover {
+  color: rgb(78, 80, 99);
 }
 
 .recipe-card p {
@@ -306,19 +310,31 @@ a:active { text-decoration: none; }
 }
 
 .recipe-card img {
-  height: 200px;
+  height: 220px;
   width: 100%;
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px
 }
 
-.recipe-card button {
+.unfav-btn {
   height: 32px;
-  width: 80px;
+  width: 100px;
   background-color:#EE573D;
   color: white;
   border: none;
   border-radius: 4px;
   font-size: 17px;
   margin-top: 8px
+}
+
+.recipe-card-btn {
+  height: 32px;
+  width: 100px;
+  background-color:#EE573D;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 17px;
+  margin-top: 8px;
+  margin-right: 10px
 }

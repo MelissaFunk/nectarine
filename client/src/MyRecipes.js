@@ -13,7 +13,8 @@ function MyRecipes({ currentUser }) {
   useEffect(() => {
     fetch(`/recipes`)
       .then(res => res.json())
-      .then(setMyRecipes)
+      .then(recipes => 
+        setMyRecipes(recipes.sort((a, b) => (a.name > b.name) ? 1 : -1)))
   }, [myRecipes])
 
   const onlyMyRecipes = myRecipes.filter(recipe => {
@@ -76,13 +77,13 @@ function MyRecipes({ currentUser }) {
       <h1>My Recipes</h1>
       {currentUser.username ? 
       <div>
-        <button onClick={() => setButtonPopUp(true)}>Add Recipe</button>
+        <button className="my-recipes-btn" onClick={() => setButtonPopUp(true)}>Add Recipe</button>
         <AddRecipe trigger={buttonPopUp} setTrigger={setButtonPopUp} currentUser={currentUser}/>
         <label>Search By Cuisine: </label>
         <input type="text" onChange={e => setCuisineFilter(e.target.value)}></input>
-        <button onClick={() => showAll()}>All 🍑</button>
-        <button onClick={() => showMade()}>Made ✅</button>
-        <button onClick={() => showFavorite()}>Favorites ⭐</button>
+        <button className="my-recipes-btn" onClick={() => showAll()}>All 🍑</button>
+        <button className="my-recipes-btn" onClick={() => showMade()}>Made ✅</button>
+        <button className="my-recipes-btn" onClick={() => showFavorite()}>Favorites ⭐</button>
         <div className="recipe-container">
           {recipesToDisplay} 
         </div>
