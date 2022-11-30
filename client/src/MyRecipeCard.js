@@ -31,7 +31,7 @@ function MyRecipeCard({ recipe, handleDeleteRecipe }) {
     .then(res => res.json())
     .then(recipe => console.log(recipe))
   }
-  
+   
   return(
     <div className="recipe-card">
       <h3><a href={recipe.link} target="_blank" rel="noreferrer">{recipe.name}</a> {recipe.has_made === true ? "✅" : null} {recipe.is_favorite === true ? "❤️" : null}</h3>
@@ -41,7 +41,7 @@ function MyRecipeCard({ recipe, handleDeleteRecipe }) {
       <AddDate trigger={buttonPopUp} setTrigger={setButtonPopUp} recipe={recipe}/>
 
       {recipe.is_favorite === true ? 
-      <button className="unfav-btn" onClick={() => onUnFavorite()}>UnFavorite</button> : 
+      <button className="recipe-card-btn" onClick={() => onUnFavorite()}>UnFavorite</button> : 
       <button className="recipe-card-btn" onClick={() => onFavorite()}>Favorite</button>}
        <button className="recipe-card-btn" onClick={() => onDeleteRecipe()}>Delete</button>
     </div>
