@@ -21,6 +21,7 @@ function App() {
     })
   }, [])
 
+
   return (
     <div>
       <NavBar currentUser={currentUser} setCurrentUser={setCurrentUser}/>
