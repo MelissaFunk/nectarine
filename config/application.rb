@@ -31,7 +31,5 @@ module Nectarine
 
     # Use SameSite=Strict for all cookies to help protect against CSRF
     config.action_dispatch.cookies_same_site_protection = :strict
-
-    config.session_store :cookie_store, key: '_app_session', expire_after: nil
   end
 end
